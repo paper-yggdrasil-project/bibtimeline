@@ -44,12 +44,12 @@ module.exports = function () {
     switch (type) {
       case ".pdf":
         event["media"] = {
-          "url": "/attachments/" + attachment
+          "url": "./attachments/" + attachment
         };
         break;
       case ".md":
         event["media"] = {
-          "url": "<iframe src='/attachments/" + path.basename(attachment, type) + ".html' frameborder='0'>"
+          "url": "<iframe src='./attachments/" + path.basename(attachment, type) + ".html' frameborder='0'>"
         };
         break;
     }

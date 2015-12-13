@@ -4,6 +4,12 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var requireDir = require('require-dir');
 var dir        = requireDir('./tasks');
+var ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy:gh-pages', ["build"], function() {
+  return gulp.src('dist/**/*')
+    .pipe(ghPages());
+});
 
 gulp.task('serve', ["styles", "bibtimeline", "md"], function() {
   browserSync({
