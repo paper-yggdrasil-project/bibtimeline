@@ -1,0 +1,27 @@
+{
+  "title": {
+    "text": {
+      "headline": "Sample Bibliography Timeline",
+      "text": "more easy to remember paper history"
+    }
+  },
+  "events": [
+    {
+      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE15",
+      "attachment": "sample15.md"
+    },
+    {
+      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE14",
+      "attachment": "sample14.pdf"
+    },
+    {
+      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE11"
+    },
+    {
+      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE00"
+    },
+    {
+      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE99"
+    }
+  ]
+}
