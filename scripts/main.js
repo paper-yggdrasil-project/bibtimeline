@@ -15,7 +15,7 @@ var data = {
         "text": "S Kato<br>BibTimeline<br>abs/xxxx.xxxx<br>https://github.com/paper-yggdrasil-project/bibtimeline/app/bib/sample.bib"
       },
       "media": {
-        "url": "<iframe src='/attachments/sample15.html' frameborder='0'>"
+        "url": "<iframe src='./attachments/sample15.html' frameborder='0'>"
       }
     },
     {
@@ -27,7 +27,7 @@ var data = {
         "text": "S Kato<br>BibTimeline<br>abs/xxxx.xxxx<br>https://github.com/paper-yggdrasil-project/bibtimeline/app/bib/sample.bib"
       },
       "media": {
-        "url": "/attachments/sample14.pdf"
+        "url": "./attachments/sample14.pdf"
       }
     },
     {
