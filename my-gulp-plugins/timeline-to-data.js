@@ -31,7 +31,6 @@ module.exports = function () {
     if (_.intersection(requiredKeys, keys).length < requiredKeys.length) {return false;}
 
     keys = _.difference(keys, requiredKeys);
-    console.log(keys);
     var text = bib.entryTags["author"];
     for(var i = 0; i < keys.length; i++) {
       text = text + "<br>" + bib.entryTags[keys[i]];
