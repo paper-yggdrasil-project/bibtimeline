@@ -24,20 +24,25 @@ module.exports = function () {
   }
 
   function bib2event(bib, type, attachment) {
-    var author = bib.entryTags["author"];
-    var title = bib.entryTags["title"];
-    var journal = bib.entryTags["journal"];
-    var volume = bib.entryTags["volume"];
-    var year = bib.entryTags["year"];
-    var url = bib.entryTags["url"];
+    if (!bib["entryTags"]) {return false;}
+
+    var requiredKeys = ["author", "title", "year"];
+    var keys = Object.keys(bib.entryTags);
+    if (_.intersection(requiredKeys, keys).length < requiredKeys.length) {return false;}
+
+    keys = _.difference(keys, requiredKeys);
+    var text = bib.entryTags["author"];
+    for(var i = 0; i < keys.length; i++) {
+      text = text + "<br>" + bib.entryTags[keys[i]];
+    }
 
     var event = {
       "start_date": {
-        "year": year
+        "year": bib.entryTags["year"]
       },
       "text": {
-        "headline": title,
-        "text": author + "<br>" + journal + "<br>" + volume + "<br>" + url
+        "headline": bib.entryTags["title"],
+        "text": text
       },
     };
 
@@ -115,7 +120,12 @@ module.exports = function () {
             gutil.log(gutil.colors.red("Warning"), gutil.colors.yellow(attachment), "not found in attachments folder");
           }
         }
-        data.events.push(bib2event(bib, type, attachment));
+        var timelineEvent = bib2event(bib, type, attachment);
+        if (!timelineEvent) {
+          var errMsg = "the bib which have " +  event.citationKey + " do not have attributes required at least"
+          this.emit('error', new gutil.PluginError('timeline-to-data', errMsg));
+        }
+        data.events.push(timelineEvent);
       }
     }
 
