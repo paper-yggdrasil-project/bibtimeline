@@ -11,15 +11,12 @@ gulp.task('deploy:gh-pages', ["build"], function() {
     .pipe(ghPages());
 });
 
-gulp.task('serve', ["styles", "bibtimeline", "md"], function() {
+gulp.task('serve', ["styles", "timeline2data", "md"], function() {
   browserSync({
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.tmp', 'app'],
-      routes: {
-        '/bower_components': 'bower_components'
-      }
+      baseDir: ['.tmp', 'app', '.']
     }
   });
 
