@@ -1,0 +1,9 @@
+{
+  "name": "bibtimeline",
+  "description": "the application visualizing the bibliography timeline.",
+  "homepage": "https://github.com/paper-yggdrasil-project/bibtimeline",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.1.1"
+  }
+}

@@ -26,13 +26,22 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('html', ['styles', "bibtimeline"], function() {
+gulp.task('html', ['styles', "timeline2data"], function() {
   return gulp.src('app/*.html')
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe(gulp.dest('.tmp'))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['html', 'images', 'iconfont', 'bib', 'attachment', 'extras']);
+gulp.task('build', ['html', 'images', 'iconfont', 'bib', 'attachment', 'extras'], function() {
+  return gulp.src('.tmp/index.html')
+    .pipe($.vulcanize({
+      "excludes": ["scripts/"],
+      "inlineCss": true,
+      "inlineScripts": true
+    }))
+    .pipe(gulp.dest('dist'));
+});
