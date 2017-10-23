@@ -26,7 +26,8 @@ module.exports = function () {
       return  callback();
     }
     var jsonString = file.contents.toString();
-    var jsString = "var data = " + jsonString + ";\n" + "var timeline = new TL.Timeline('timeline-embed', data);";
+    var jsString = "var data = " + jsonString + ";\n" + "var timeline = new TL.Timeline('timeline-embed', data, {'initial_zoom': 0, 'zoom_sequence':[0.5]});\n";
+    jsString = jsString + "timeline.setZoom(0);";
 
     var output = new gutil.File({
       cwd:  file.cwd,
