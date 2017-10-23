@@ -1,27 +1,25 @@
 {
   "title": {
     "text": {
-      "headline": "Sample Bibliography Timeline",
-      "text": "more easy to remember paper history"
+      "headline": "Please Input Headline",
+      "text": "made by timeline:generate"
     }
   },
   "events": [
     {
-      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE15",
-      "attachment": "sample15.md"
+      "citationKey": "Green:1961:BAQ:1460690.1460714"
     },
     {
-      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE14",
-      "attachment": "sample14.pdf"
+      "citationKey": "woods1972lunar"
     },
     {
-      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE11"
+      "citationKey": "Warren:1982:EEA:972942.972944"
     },
     {
-      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE00"
+      "citationKey": "GROSZ1987173"
     },
     {
-      "citationKey": "GITHUB:repository/bibtimeline/SAMPLE99"
+      "citationKey": "Weizenbaum:1966:ECP:365153.365168"
     }
   ]
 }
