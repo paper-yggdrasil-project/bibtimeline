@@ -18,9 +18,17 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
+  <!-- Polymer -->
+  <!-- <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script> -->
+  <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+  <!-- Polymer -->
+
 </head>
 
 <body>
+  <iron-ajax
+      handle-as="json"
+      debounce-duration="300"></iron-ajax>
   <div id='timeline-embed'></div>
 
   <!-- build:js scripts/vendor.js -->
@@ -29,12 +37,11 @@
   <!-- endbuild -->
 
   <!-- build:js scripts/plugins.js -->
-  <script src="scripts/timeline.js"></script>
+  <script src="./scripts/timeline.js"></script>
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
-  <script src="scripts/bibtimeline.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="./scripts/main.js"></script>
   <!-- endbuild -->
 </body>
 </html>
